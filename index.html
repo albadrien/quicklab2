@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const url = "https://dog.ceo/api/breeds/list/all";
+
+        let facts = fetch(url).then((response) => response.json())
+
+        facts.then((facts) => {
+            console.log(Object.keys(facts.message));
+            document.write("<h2>Some different type of dogs</h2>");
+            document.write("<ul>");
+            for (let fact of Object.keys(facts.message)) {
+                document.write("<li> " + fact + "</li>");
+            }
+            document.write("</ul>");
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
